@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from oimovelcerto.views import home
+from oimovelcerto.views import home, cadastro
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
+    path('cadastro/', cadastro),
 ]
