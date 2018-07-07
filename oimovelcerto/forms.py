@@ -1,7 +1,7 @@
-from django import forms
+from django.forms import ModelForm
 from oimovelcerto.models import cadastro
 
-#class PostForm(ModelForm):
-  #  class Meta:
- #       model = Post
-   #     fields = ['titulo', 'texto']
+class CadastroForm(ModelForm):
+    class Meta:
+        model = cadastro
+        fields = ['titulo', 'regiao', 'CEP', 'valor', 'descricao', 'foto',]

@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="description" content="O imóvel certo para você!">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>O imóvel certo</title>
         <link rel="stylesheet" href="theme/css/bootstrap.grid.css">
@@ -14,6 +15,15 @@
     </head>
     <body>
         <p>teste</p>
+        <ul>
+        {% for cadastro in cadastro %}
+          <li> {{ cadastro.titulo }} - {{ cadastro.regiao }} - {{ cadastro.valor }} -
+               {{ cadastro.descricao }} -{{ cadastro.CEP }} - {{ cadastro.imagem }} </li>
+        {% endfor %}
+        </ul>
+
+
+
         <script src="js/main.js"></script>
     </body>
 </html>
