@@ -1,5 +1,5 @@
 {% load staticfiles %}
-<!doctype html>
+<!Doctype html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -15,11 +15,12 @@
     <![endif]-->
     </head>
     <body>
-        <p>teste</p>
+        <h2>Aqui voce encontra o imovel perfeito para alugar!</h2>
+        <p>Imoveis disponiveis:</p>
         <ul>
-        {% for cadastro in cadastro %}
-          <li> {{ cadastro.titulo }} - {{ cadastro.regiao }} - {{ cadastro.valor }} -
-               {{ cadastro.descricao }} -{{ cadastro.CEP }} - {{ cadastro.imagem }} </li>
+        {% for Cadastro in properties %}
+          <li> {{ Cadastro.title }} - {{ Cadastro.region }} - {{ Cadastro.rate }} -
+               {{ Cadastro.description }} -{{ Cadastro.zipcode }} - {{ Cadastro.photo }} </li>
         {% endfor %}
         </ul>
 

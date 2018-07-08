@@ -1,7 +1,11 @@
+from django import forms
+from .models import Cadastro
 from django.forms import ModelForm
-from oimovelcerto.models import cadastro
 
 class CadastroForm(ModelForm):
     class Meta:
-        model = cadastro
-        fields = ['titulo', 'regiao', 'CEP', 'valor', 'descricao', 'foto',]
+        model = Cadastro
+        fields = ['title', 'region', 'zipcode', 'rate', 'description',]
+
+        #photo = forms.ImageField(upload_to='media.photo.path',)
+
