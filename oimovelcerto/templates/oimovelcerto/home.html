@@ -29,13 +29,15 @@
 
         <button type="submit">Buscar</button>
         </form>
---->
+        --->
         <p id="text">Imoveis disponiveis:</p>
 
         <ul>
         {% for Register in properties %}
           <li id="list"> Título: {{ Register.title }} - Região: {{ Register.region }} -
-              Valor: {{ Register.rate }} - Descrição: {{ Register.description }} - CEP: {{ Register.zipcode }} -  <img src="{{ Register.photo.url }}"> </li>
+              Valor: {{ Register.rate }} - Descrição: {{ Register.description }} - CEP: {{ Register.zipcode }} -
+              <img src="{{ Register.picture.url }}" height="100" width="120">
+          </li>
         {% endfor %}
         </ul>
 
