@@ -1,4 +1,33 @@
-p {
+body {
+
+    width: 100vw
+    height: 100vh;
+}
+
+
+header {
+    position: static;
+    background-color: #F0FFFF;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    width: 100vw;
+    height: 20vh;
+}
+
+#headline {
+    text-align: left;
+    margin: 0 0 15px 0;
+}
+
+#text {
     font-family: serif;
     font-size: 20px;
+    margin-left: 22px;
+    margin-bottom: 20px;
+}
+#list {
+
+}
+ul {
+    margin-left: 15px;
 }

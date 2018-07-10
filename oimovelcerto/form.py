@@ -1,11 +1,19 @@
 from django import forms
-from .models import Cadastro
+from .models import Register
+#from .models import Search
 from django.forms import ModelForm
 
-class CadastroForm(ModelForm):
-    class Meta:
-        model = Cadastro
-        fields = ['title', 'region', 'zipcode', 'rate', 'description',]
 
-        #photo = forms.ImageField(upload_to='media.photo.path',)
+class RegisterForm(ModelForm):
+    class Meta:
+        model = Register
+        fields = ['title', 'region', 'zipcode', 'rate', 'description', 'photo',]
+
+
+#class SearchForm(ModelForm):
+#    class Meta:
+#        model = Search
+#        fields = ['code']
+
+
 

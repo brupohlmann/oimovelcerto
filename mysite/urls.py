@@ -20,5 +20,5 @@ from oimovelcerto.views import home, new_property
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
-    path('cadastro/', new_property),
+    path('cadastro/', new_property, name='url_new'),
 ]

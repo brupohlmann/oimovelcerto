@@ -15,15 +15,29 @@
     <![endif]-->
     </head>
     <body>
-        <h2>Aqui voce encontra o imovel perfeito para alugar!</h2>
-        <p>Imoveis disponiveis:</p>
+        <header class="container-fluid">
+            <h1 id="headline">O imóvel certo.com</h1>
+            <h3>Aqui você encontra o imóvel que estava procurando! </h3>
+        </header>
+
+        <a href="{% url 'url_new' %}" id="text">Cadastre seu imóvel aqui!</a>
+<!--
+        <form method="POST">
+        {% csrf_token %}
+
+        {{ zipcodes }}
+
+        <button type="submit">Buscar</button>
+        </form>
+--->
+        <p id="text">Imoveis disponiveis:</p>
+
         <ul>
-        {% for Cadastro in properties %}
-          <li> {{ Cadastro.title }} - {{ Cadastro.region }} - {{ Cadastro.rate }} -
-               {{ Cadastro.description }} -{{ Cadastro.zipcode }} - {{ Cadastro.photo }} </li>
+        {% for Register in properties %}
+          <li id="list"> Título: {{ Register.title }} - Região: {{ Register.region }} -
+              Valor: {{ Register.rate }} - Descrição: {{ Register.description }} - CEP: {{ Register.zipcode }} - Foto: {{ oimovelcerto.photo.url }} </li>
         {% endfor %}
         </ul>
-
 
 
         <script src="{% static 'js/main.js' %}"></script>
