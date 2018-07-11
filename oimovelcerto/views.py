@@ -17,12 +17,16 @@ def home(request):
 def new_property(request):
     data = {}
     form = RegisterForm(request.POST or None)
+    data['form'] = form
 
     if form.is_valid():
         form.save()
         return home(request)
 
-    data['form'] = form
+    def __init__(self, *args, **kwargs):
+      super(RegisterForm, self).__init__(*args, **kwargs)
+      self.fields['pictures'].required = False
+
     return render(request, 'oimovelcerto/cadastro.html', data)
 
 

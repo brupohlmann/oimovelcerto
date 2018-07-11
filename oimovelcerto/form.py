@@ -7,11 +7,9 @@ from django.forms import ModelForm
 class RegisterForm(ModelForm):
     class Meta:
         model = Register
-        fields = ('title', 'region', 'zipcode', 'rate', 'picture', 'description',)
+        fields = ('title', 'region', 'zipcode', 'rate', 'description', 'pictures', )
 
-    def __init__(self, *args, **kwargs):
-        super(RegisterForm, self).__init__(*args, **kwargs)
-        self.fields['picture'].required = False
+
 
 
 #class SearchForm(ModelForm):

@@ -11,8 +11,7 @@ class Register(models.Model):
     zipcode = models.CharField(verbose_name='CEP', max_length=9)
     rate = models.DecimalField(verbose_name='Valor', max_digits=7, decimal_places=2)
     description = models.CharField(verbose_name='Descrição', max_length=200)
-    picture = models.ImageField(verbose_name='Foto', upload_to='media/', null=True, blank=True)
-
+    pictures = models.ImageField(verbose_name='Foto', upload_to='media/', null=True, blank=True)
 
 
 """
