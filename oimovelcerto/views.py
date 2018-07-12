@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Register
 from .form import RegisterForm
+from django.http import HttpResponse
 #from .form import SearchForm
 
 
@@ -16,16 +17,12 @@ def home(request):
 
 def new_property(request):
     data = {}
-    form = RegisterForm(request.POST or None)
+    form = RegisterForm(request.POST, request.FILES)
     data['form'] = form
 
     if form.is_valid():
         form.save()
         return home(request)
-
-    def __init__(self, *args, **kwargs):
-      super(RegisterForm, self).__init__(*args, **kwargs)
-      self.fields['pictures'].required = False
 
     return render(request, 'oimovelcerto/cadastro.html', data)
 

@@ -7,7 +7,7 @@ from django.forms import ModelForm
 class RegisterForm(ModelForm):
     class Meta:
         model = Register
-        fields = ('title', 'region', 'zipcode', 'rate', 'description', 'pictures', )
+        fields = ('title', 'region', 'zipcode', 'rate', 'description', 'image', )
 
 
 
