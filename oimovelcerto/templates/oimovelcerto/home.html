@@ -1,24 +1,6 @@
+{% extends 'oimovelcerto/base.html' %}
 {% load staticfiles %}
-<!Doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="description" content="O imóvel certo para você!">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>O imóvel certo</title>
-        <link rel="stylesheet" href="{% static 'css/bootstrap.grid.css' %}">
-        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-        <!--[if lt  IE  9]>
-        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    </head>
-    <body>
-        <header class="container-fluid">
-            <h1 id="headline">O imóvel certo.com</h1>
-            <h3>Aqui você encontra o imóvel que estava procurando! </h3>
-        </header>
+{% block content %}
 
         <a href="{% url 'url_new' %}" id="text">Cadastre seu imóvel aqui!</a>
 <!--
@@ -30,18 +12,16 @@
         <button type="submit">Buscar</button>
         </form>
         --->
-        <p id="text">Imoveis disponiveis:</p>
+        <h3>Imoveis disponiveis:</h3>
 
-        <ul>
         {% for object in properties %}
-          <li id="list"> {{ object.title }} - Região: {{ object.region }} -
-              Valor: {{ object.rate }} - Descrição: {{ object.description }} - CEP: {{ object.zipcode }} -
-              <img src="{{ object.image.url }}">
-          </li>
+            <ul class="ad">
+                <h4>{{ object.title }}</h4>
+                <li>Região: {{ object.region }}</li>
+                <li>Descrição: {{ object.description }}</li>
+                <li>Valor: {{ object.rate }}</li>
+                <img src="{{ object.image.url }}">
+            </ul>
         {% endfor %}
-        </ul>
 
-
-        <script src="{% static 'js/main.js' %}"></script>
-    </body>
-</html>
+{% endblock %}

@@ -7,15 +7,6 @@ from django.forms import ModelForm
 class RegisterForm(ModelForm):
     class Meta:
         model = Register
-        fields = ('title', 'region', 'zipcode', 'rate', 'description', 'image', )
-
-
-
-
-#class SearchForm(ModelForm):
-#    class Meta:
-#        model = Search
-#        fields = ['code']
-
+        fields = ('title', 'region', 'rate', 'description', 'image', )
 
 
