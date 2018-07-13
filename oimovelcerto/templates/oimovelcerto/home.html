@@ -2,17 +2,15 @@
 {% load staticfiles %}
 {% block content %}
 
-        <a href="{% url 'url_new' %}" id="text">Cadastre seu imóvel aqui!</a>
-<!--
-        <form method="POST">
+    <a href="{% url 'url_new' %}" id="text">Cadastre seu imóvel aqui!</a>
+    <p id="text">Faça uma busca por região:</p>
+    <form method="GET">
         {% csrf_token %}
+        {{ user_filter.as_p }}
+    <button type="submit">Buscar</button>
+    </form>
 
-        {{ zipcodes }}
-
-        <button type="submit">Buscar</button>
-        </form>
-        --->
-        <h3>Imoveis disponiveis:</h3>
+    <h3>Imoveis disponíveis:</h3>
 
         {% for object in properties %}
             <ul class="ad">

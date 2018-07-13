@@ -1,0 +1,17 @@
+{% extends 'oimovelcerto/base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<ul>
+  {% for object in filter.qs %}
+     <h4>{{ object.title }}</h4>
+                <li>Região: {{ object.region }}</li>
+                <li>Descrição: {{ object.description }}</li>
+                <li>Valor: {{ object.rate }}</li>
+                <img src="{{ object.image.url }}">
+  {% endfor %}
+  </ul>
+
+
+
+{% endblock %}
