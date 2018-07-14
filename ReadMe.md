@@ -1,6 +1,6 @@
 # O imóvel certo.com
 
-Website/API for the Finxi challange, that simulates an online rental service.
+Website for the Finxi challange, that simulates an online rental service.
 
 ## To run at development environment
 
