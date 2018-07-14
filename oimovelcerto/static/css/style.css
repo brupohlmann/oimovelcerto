@@ -25,7 +25,7 @@ h4 {
 }
 
 h3 {
-    padding: 20px;
+    padding: 20px 20px;
 }
 #ad ul {
     font-family: serif;
@@ -37,3 +37,4 @@ h3 {
 li {
     list-style-type: none;
 }
+

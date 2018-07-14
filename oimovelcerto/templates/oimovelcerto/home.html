@@ -3,23 +3,23 @@
 {% block content %}
 
     <a href="{% url 'url_new' %}" id="text">Cadastre seu imóvel aqui!</a>
-    <p id="text">Faça uma busca por região:</p>
-    <form method="GET">
+    <h4>Faça uma busca por bairro:</h4>
+    <form method="get" action="/search">
         {% csrf_token %}
-        {{ user_filter.as_p }}
-    <button type="submit">Buscar</button>
+        <input type="text" name="search" id="">
+        <button type="submit">Buscar</button>
     </form>
 
     <h3>Imoveis disponíveis:</h3>
-
         {% for object in properties %}
             <ul class="ad">
-                <h4>{{ object.title }}</h4>
-                <li>Região: {{ object.region }}</li>
+                <h4> {{ object.title }}</h4>
+                <li>Bairro: {{ object.region }}</li>
                 <li>Descrição: {{ object.description }}</li>
-                <li>Valor: {{ object.rate }}</li>
-                <img src="{{ object.image.url }}">
+                <li>Valor: R${{ object.rate }}</li>
+                <img src="{{ object.image.url }}" alt="foto">
             </ul>
         {% endfor %}
 
 {% endblock %}
+

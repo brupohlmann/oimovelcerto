@@ -2,7 +2,6 @@ from django.shortcuts import render
 from .models import Register
 from .form import RegisterForm
 from django.http import HttpResponse
-from .filters import UserFilter
 
 
 # Create your views here.
@@ -28,5 +27,5 @@ def new_property(request):
 
 def search(request):
     data = {}
-    user_filter = UserFilter(request.GET, queryset=Register.objects.all())
-    return render(request, 'oimovelcerto/search.html', {'filter': user_filter})
+    data['properties'] = Register.objects.filter(region__contains=request.GET['search'])
+    return render(request, 'oimovelcerto/home.html', data)

@@ -1,6 +1,4 @@
 Django==2.0.7
-django-filter==1.1.0
-django-pdb==0.6.2
 Jinja2==2.10
 MarkupSafe==1.0
 Pillow==5.2.0
